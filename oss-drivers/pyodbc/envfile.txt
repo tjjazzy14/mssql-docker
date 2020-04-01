@@ -1,0 +1,4 @@
+USER=datauser
+PASSWD=T3mpP4551234
+SERVER=tcp:data-test-centralus.database.windows.net,1433
+DATABASE=data-test-centralus

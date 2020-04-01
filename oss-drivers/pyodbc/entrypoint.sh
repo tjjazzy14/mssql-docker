@@ -2,9 +2,9 @@ printf "\n### Python Development Environment for SQL Server ###\n\n"
 
 printf "This container includes everything necessary to start working with Python against SQL Server. Contents:\n\t- ODBC Drivers\n\t- pyodbc connector module.\n\t- A working Python to SQL Server sample.\n\t- SQL Server command-line utilities.\n\nTo start an interactive shell session with this container:\n\tdocker run -it microsoft/pyodbc\n\n"
 
-if [ "$DB_HOST" ] && [ "$DB_USERNAME" ] && [ "$DB_PASSWORD" ]
+if [ "$SERVER" ] && [ "$USER" ] && [ "$PASSWRD" ] && [ "$DATABASE" ]
 then
-    printf "Provided environment variables:\n\t- Host:$DB_HOST\n\t- User:$DB_USERNAME\n\t- Password:$DB_PASSWORD\n\n"
+    printf "Provided environment variables:\n\t- SERVER:$SERVER\n\t- User:$USER\n\t- Password:$PASSWRD\n\n"
     
     envsubst <sample.py > connect.py
 

@@ -1,9 +1,18 @@
 import pyodbc
-server = '$DB_HOST'
-username = '$DB_USERNAME'
-password = '$DB_PASSWORD'
+import os
 
-cnxn = pyodbc.connect('DRIVER={ODBC Driver 13 for SQL Server};SERVER='+server+';PORT=1443;UID='+username+';PWD='+ password)
+#USER='datauser'
+#PASSWD='T3mpP4551234'
+#SERVER='
+#DATABASE='data-test-centralus'
+
+
+database = '$DATABASE'
+server = '$SERVER'
+username = '$USER'
+password = '$PASSWRD'
+
+cnxn = pyodbc.connect('DRIVER={ODBC Driver 17 for SQL Server};SERVER='+server+';Database='+database+';PORT=1443;UID='+username+';PWD='+ password)
 cursor = cnxn.cursor()
 
 print ('Using the following SQL Server version:')
